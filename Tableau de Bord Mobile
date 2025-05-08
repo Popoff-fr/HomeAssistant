@@ -1,0 +1,1959 @@
+views:
+  - title: MAISON
+    path: home
+    type: sections
+    max_columns: 1
+    sections:
+      - type: grid
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: person.damien
+                card_mod:
+                  style: |
+                    ha-card {
+                    background: transparent; 
+                    border-style: none;
+                    }
+                show_entity_picture: true
+                show_name: false
+                styles:
+                  card:
+                    - show_border: false
+                  grid:
+                    - position: relative
+                  custom_fields:
+                    notification:
+                      - background-color: |
+                          [[[
+                            if (states['person.damien'].state == "home")
+                            return "green";
+                            if (states['person.damien'].state == "Quartier")
+                            return "rgba(139, 107, 22 , 1)" ;
+                            if (states['person.damien'].state == "Le_Passage")
+                            return "orange";
+                            return "red";
+                          ]]]
+                      - position: absolute
+                      - border-radius: 50%
+                      - left: 60%
+                      - top: 2%
+                      - width: 20px
+                      - font-size: 1px
+                      - line-height: 20px
+                custom_fields:
+                  notification: |
+                    [[[ 
+                    if (states['person.damien'].state == "home")
+                    return `<ha-icon icon="mdi:home">`
+                    if (states['person.damien'].state == "Quartier")
+                    return `<ha-icon icon="mdi:home-group">`
+                    if (states['person.damien'].state == "Le_Passage")
+                    return `<ha-icon icon="mdi:home-city-outline">`
+                    if (states['person.damien'].state == "Garderie")
+                    return `<ha-icon icon="mdi:dog-service">`
+                    return `<ha-icon icon="mdi:home-export-outline">`
+                    ]]]
+              - type: custom:button-card
+                entity: person.charlotte
+                card_mod:
+                  style: |
+                    ha-card {
+                    background: transparent; 
+                    border-style: none;
+                    }
+                show_entity_picture: true
+                show_name: false
+                styles:
+                  card:
+                    - show_border: false
+                  grid:
+                    - position: relative
+                  custom_fields:
+                    notification:
+                      - background-color: |
+                          [[[
+                            if (states['person.charlotte'].state == "home")
+                            return "green";
+                            if (states['person.charlotte'].state == "Quartier")
+                            return "rgba(244, 206, 95 , 1)" ;
+                            if (states['person.charlotte'].state == "Le_Passage")
+                            return "orange";
+                            return "red";
+                          ]]]
+                      - position: absolute
+                      - border-radius: 50%
+                      - left: 60%
+                      - top: 2%
+                      - width: 20px
+                      - font-size: 1px
+                      - line-height: 20px
+                custom_fields:
+                  notification: |
+                    [[[ 
+                    if (states['person.charlotte'].state == "home")
+                    return `<ha-icon icon="mdi:home">`
+                    if (states['person.charlotte'].state == "Quartier")
+                    return `<ha-icon icon="mdi:home-group">`
+                    if (states['person.charlotte'].state == "Le_Passage")
+                    return `<ha-icon icon="mdi:home-city-outline">`
+                    return `<ha-icon icon="mdi:home-export-outline">`
+                    ]]]
+          - type: grid
+            cards:
+              - show_name: true
+                show_icon: true
+                type: button
+                icon: mdi:window-shutter
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/volets
+                name: Volets roulants
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #F1FFFA;
+                      font-weight: bold;
+                      border-radius: 1px;
+                    }  
+              - type: button
+                icon: mdi:door
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/portes
+                name: Portes
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #FDF4B7;
+                      font-weight: bold;
+                      border-radius: 1px;
+                    }
+              - type: button
+                icon: mdi:lightbulb
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/lumieres
+                name: Lampes
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #FFB6D9;
+                      font-weight: bold;
+                      border-radius: 1px;
+                    }
+              - type: button
+                icon: mdi:pool
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/piscine
+                name: Piscine
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #8ED1FE;
+                      font-weight: bold;
+                      border-radius: 1px;
+                    }
+              - type: button
+                icon: mdi:robot-vacuum
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/aspirateur
+                name: Aspirateur
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #FFC9A7;
+                      font-weight: bold;
+                      border-radius: 0px;
+                    }
+              - type: button
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/temperatures
+                name: Températures
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #CDC2EE;
+                      font-weight: bold;
+                      border-radius: 0px;
+                    }      
+              - type: button
+                icon: mdi:weather-partly-cloudy
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/meteo
+                name: Météo
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #D2DBAE;
+                      font-weight: bold;
+                      border-radius: 0px;
+                    }
+              - show_name: true
+                show_icon: true
+                type: button
+                icon: mdi:solar-panel
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/solaire
+                name: Solaire
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #FFE97C;
+                      font-weight: bold;
+                      border-radius: 0px;
+                    }      
+              - type: button
+                icon: mdi:chart-line
+                tap_action:
+                  action: navigate
+                  navigation_path: /energy
+                name: Energie
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #C79CA5;
+                      font-weight: bold;
+                      border-radius: 0px;
+                    }
+              - type: button
+                icon: mdi:robot-mower-outline
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/tondeuse
+                name: Tondeuse
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #BAE0F1;
+                      font-weight: bold;
+                      border-radius: 0px;
+                    }
+              - type: button
+                icon: mdi:record-rec
+                tap_action:
+                  action: navigate
+                  navigation_path: /ccab4aaf_frigate-proxy
+                name: Frigate
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #FF7B7C;
+                      font-weight: bold;
+                      border-radius: 0px;
+                    }      
+              - type: button
+                icon: mdi:garage-variant
+                tap_action:
+                  action: navigate
+                  navigation_path: /dashboard-mobile/garage
+                name: Garage
+                card_mod:
+                  style: |
+                    ha-card {
+                      color: black;
+                      background: #D9FFFB;
+                      font-weight: bold;
+                      border-radius: 0px;
+                    }  
+    cards: []
+    badges: []
+  - title: Meteo
+    path: meteo
+    icon: mdi:weather-partly-cloudy
+    subview: true
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:meteofrance-weather-card
+            entity: weather.le_passage
+            cloudCoverEntity: sensor.le_passage_cloud_cover
+            rainChanceEntity: sensor.le_passage_rain_chance
+            freezeChanceEntity: sensor.le_passage_freeze_chance
+            snowChanceEntity: sensor.le_passage_snow_chance
+            uvEntity: sensor.le_passage_uv
+            rainForecastEntity: sensor.le_passage_next_rain
+            alertEntity: sensor.38_weather_alert
+            number_of_forecasts: '7'
+            hourly_forecast: true
+  - title: Volets
+    path: volets
+    icon: mdi:window-shutter
+    type: sections
+    max_columns: 4
+    subview: true
+    sections:
+      - type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volet_salon
+            name: Salon
+            icon_close: mdi:window-shutter
+            show_last_changed: false
+            show_attribute: true
+            show_name: true
+            force_icon: true
+            show_icon: true
+            show_state: false
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            icon_open: mdi:window-shutter-open
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volet_salon'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volet_salle_a_manger
+            name: Salle à Manger
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            icon_open: mdi:window-shutter-open
+            icon_close: mdi:window-shutter
+            show_state: false
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            show_attribute: true
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volet_salle_a_manger'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volet_tv
+            name: TV
+            icon_close: mdi:window-shutter
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            show_last_changed: false
+            show_state: false
+            show_attribute: true
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volet_tv'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volet_cuisine
+            name: Cuisine
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            icon_open: mdi:window-shutter-open
+            icon_close: mdi:window-shutter
+            show_state: false
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            show_attribute: true
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volet_cuisine'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volet_chambre
+            name: Chambre
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            icon_open: mdi:window-shutter-open
+            icon_close: mdi:window-shutter
+            show_state: false
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            show_attribute: true
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volet_chambre'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volet_bureau_damien
+            name: Bureau Damien
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            icon_open: mdi:window-shutter-open
+            icon_close: mdi:window-shutter
+            show_state: false
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            show_attribute: true
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volet_bureau_damien'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volet_bureau_charlotte
+            name: Bureau Charlotte
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            icon_open: mdi:window-shutter-open
+            icon_close: mdi:window-shutter
+            show_state: false
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            show_attribute: true
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volet_bureau_charlotte'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volet_salle_de_bain
+            name: Salle de Bain
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            icon_open: mdi:window-shutter-open
+            icon_close: mdi:window-shutter
+            show_state: false
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            show_attribute: true
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volet_salle_de_bain'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+          - type: custom:bubble-card
+            card_type: cover
+            entity: cover.volets_piece_principale
+            name: Tous
+            card_layout: large
+            layout_options:
+              grid_columns: 4
+              grid_rows: 1
+            icon_open: mdi:window-shutter-open
+            icon_close: mdi:window-shutter
+            show_state: false
+            icon_down: mdi:arrow-down-bold
+            icon_up: mdi:arrow-up-bold
+            show_attribute: true
+            attribute: current_position
+            styles: |
+              * { font-size: 17px !important;  }
+              .bubble-icon {
+                color: ${hass.states['cover.volets_piece_principale'].state === 'closed' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'}} !important;
+              }
+    cards: []
+  - title: Portes
+    path: portes
+    icon: mdi:door
+    type: sections
+    sections:
+      - type: grid
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: button
+                entity: switch.ouverture_portail_trigger
+                name: Portail
+                sub_button:
+                  - entity: binary_sensor.ouverture_portail_garage_door_contact
+                    show_background: false
+                    icon: mdi:fence
+                show_icon: false
+                styles: |
+                  * { font-size: 17px !important;  }
+                  .bubble-sub-button-icon {
+                   --mdc-icon-size: 50px !important;
+                  }}
+                   .bubble-button-background {background-color:transparent;}
+                   .bubble-sub-button-1 >
+                   ha-icon {
+                     color: ${hass.states['binary_sensor.ouverture_portail_garage_door_contact'].state === 'off' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'} !important;
+                   }}
+                card_layout: large
+              - type: custom:bubble-card
+                card_type: button
+                entity: switch.porte_garage_trigger
+                name: Porte Garage
+                sub_button:
+                  - entity: binary_sensor.porte_garage_garage_door_contact
+                    show_background: false
+                show_icon: false
+                styles: |
+                  * { font-size: 17px !important;  }
+                  .bubble-sub-button-icon {
+                   --mdc-icon-size: 50px !important;
+                  }
+                   .bubble-sub-button-1 >
+                   ha-icon {
+                     color: ${hass.states['binary_sensor.porte_garage_garage_door_contact'].state === 'off' ? 'rgba(205, 105, 97)' : 'rgba(144, 238, 144)'} !important;
+                   }
+                   ${subButtonIcon[0].setAttribute("icon",
+                   hass.states['binary_sensor.porte_garage_garage_door_contact'].state === 'off' ?
+                   'mdi:garage-variant' : 'mdi:garage-open-variant')}
+                card_layout: large
+    max_columns: 4
+    subview: true
+    cards: []
+  - title: Lumières
+    path: lumieres
+    icon: mdi:lightbulb
+    type: sections
+    max_columns: 4
+    subview: true
+    sections:
+      - type: grid
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: switch.prise_salon
+                name: Salon
+                card_layout: large
+                icon: mdi:lightbulb
+                styles: |
+                  * { font-size: 20px !important;  }
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: switch.lampe_salon
+                name: Salon 2
+                card_layout: large
+                icon: mdi:lightbulb
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+          - type: horizontal-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: light.lampe_salle_a_manger
+                name: Salle à manger
+                card_layout: large
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: light.lampe_bureau_damien
+                name: Bureau Damien
+                card_layout: large
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+          - type: horizontal-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: switch.spots_terrasse
+                name: Spots
+                icon: mdi:lightbulb
+                card_layout: large
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: light.lampes_terrasse
+                name: Terrasse
+                card_layout: large
+                icon: mdi:lightbulb
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+          - type: horizontal-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: light.lampe_entree_cour
+                name: Seuil
+                card_layout: large
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: light.lampe_entree
+                name: Entrée
+                card_layout: large
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+          - type: horizontal-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: light.lampe_etendage
+                name: Etendage
+                card_layout: large
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+              - type: custom:bubble-card
+                card_type: button
+                button_type: switch
+                entity: light.lampe_cabanon
+                name: Cabanon
+                card_layout: large
+                styles: |
+                  * { font-size: 20px !important;  }
+                  .bubble-button-background {
+                      opacity: 1 !important;
+                      background-color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+                  .bubble-icon {
+                      color: ${state === 'on' ? 'rgb(255, 152, 0 , 1)' : "transparency"} !important;
+                      }
+  - title: Piscine
+    path: piscine
+    icon: mdi:pool
+    subview: true
+    cards: []
+    type: sections
+    sections:
+      - type: grid
+        cards:
+          - type: gauge
+            entity: sensor.temperature_piscine_temperature
+            max: 34
+            needle: true
+            segments:
+              - from: 0
+                color: '#87CEFA'
+              - from: 10
+                color: '#00BFFF'
+              - from: 20
+                color: '#4682B4'
+              - from: 28
+                color: '#ffa600'
+              - from: 31
+                color: '#db4437'
+            unit: °C
+            min: 0
+            name: ' '
+            card_mod:
+              style: |
+                ha-card {
+                  text-align: center;
+                  background: transparent; 
+                  border-style: none;
+                  font-size: 20px;
+                  font-family: Arial, sans-serif;
+                  font-weight: bold
+                   }
+          - type: markdown
+            content: >
+              {% set date_et_heure_derniere_filtration_piscine =
+              states('input_datetime.date_et_heure_derniere_filtration_piscine')
+              | as_datetime%}
+
+              {% if is_state('switch.pompe_piscine', 'on') %}
+                La piscine est en train de filtrer.
+              {% else %}
+                Dernière filtration : le {{ date_et_heure_derniere_filtration_piscine.strftime('%d/%m/%Y à %Hh%M') }}
+              {% endif %}
+            card_mod:
+              style: |
+                ha-card {
+                  text-align: center;
+                  background: transparent; 
+                  border-style: none;
+                  font-size: 20px;
+                  font-family: Arial, sans-serif;
+                  font-weight: bold
+                   }
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.pompe_piscine
+            name: Pompe Piscine
+            card_layout: large
+            icon: mdi:fan
+            styles: |
+              * { font-size: 20px !important;} .bubble-icon {
+                animation: ${hass.states['switch.pompe_piscine'].state === 'on' ? 'slow-rotate 2s linear infinite' : ''};
+              } @keyframes slow-rotate {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+              }
+            show_state: false
+            show_last_changed: false
+            show_attribute: false
+            force_icon: false
+            show_icon: true
+            scrolling_effect: true
+            sub_button:
+              - entity: sensor.pompe_piscine_power
+                show_state: true
+                show_name: false
+                show_icon: false
+                state_background: true
+                show_background: false
+                tap_action:
+                  action: none
+                double_tap_action:
+                  action: none
+            rows: 1
+    max_columns: 4
+    badges: []
+  - title: Aspirateur
+    path: aspirateur
+    icon: mdi:vacuum
+    subview: true
+    cards:
+      - type: custom:xiaomi-vacuum-map-card
+        map_source:
+          camera: camera.aspi_map
+          crop:
+            top: 140
+            right: 100
+            left: 140
+            bottom: 50
+        calibration_source:
+          camera: true
+        entity: vacuum.aspi
+        vacuum_platform: default
+        map_modes:
+          - name: Zone cleanup
+            icon: mdi:select-drag
+            run_immediately: false
+            coordinates_rounding: true
+            coordinates_to_meters_divider: 1000
+            selection_type: MANUAL_RECTANGLE
+            max_selections: 5
+            repeats_type: EXTERNAL
+            max_repeats: 3
+            service_call_schema:
+              service: xiaomi_miio.vacuum_clean_zone
+              service_data:
+                zone: '[[selection]]'
+                repeats: '[[repeats]]'
+                entity_id: '[[entity_id]]'
+            predefined_selections: []
+            variables: {}
+          - name: Pin & Go
+            icon: mdi:map-marker-plus
+            run_immediately: false
+            coordinates_rounding: true
+            coordinates_to_meters_divider: 1000
+            selection_type: MANUAL_POINT
+            max_selections: 999
+            repeats_type: NONE
+            max_repeats: 1
+            service_call_schema:
+              service: xiaomi_miio.vacuum_goto
+              service_data:
+                x_coord: '[[point_x]]'
+                y_coord: '[[point_y]]'
+                entity_id: '[[entity_id]]'
+            predefined_selections: []
+            variables: {}
+          - name: Pièces
+            icon: mdi:floor-plan
+            run_immediately: false
+            coordinates_rounding: true
+            coordinates_to_meters_divider: 1000
+            selection_type: ROOM
+            id_type: number
+            max_selections: 999
+            repeats_type: EXTERNAL
+            max_repeats: 3
+            service_call_schema:
+              service: vacuum.send_command
+              service_data:
+                command: app_segment_clean
+                entity_id: '[[entity_id]]'
+                params:
+                  - segments: '[[selection]]'
+                    repeat: '[[repeats]]'
+            predefined_selections:
+              - id: '17'
+                icon:
+                  name: mdi:broom
+                  x: 21025
+                  'y': 23450
+                label:
+                  text: Salon
+                  x: 21025
+                  'y': 23650
+                  offset_y: 35
+                outline:
+                  - - 19650
+                    - 21900
+                  - - 22750
+                    - 21900
+                  - - 22750
+                    - 26200
+                  - - 20050
+                    - 26400
+                  - - 19650
+                    - 26350
+              - id: '16'
+                icon:
+                  name: mdi:broom
+                  x: 21900
+                  'y': 27625
+                label:
+                  text: cuisine
+                  x: 21900
+                  'y': 27925
+                  offset_y: 35
+                outline:
+                  - - 20050
+                    - 26400
+                  - - 22750
+                    - 26200
+                  - - 24150
+                    - 26100
+                  - - 24150
+                    - 29600
+                  - - 20050
+                    - 29600
+              - id: '18'
+                icon:
+                  name: mdi:broom
+                  x: 25500
+                  'y': 24000
+                label:
+                  text: Salle à manger
+                  x: 25500
+                  'y': 24200
+                  offset_y: 35
+                outline:
+                  - - 22750
+                    - 26200
+                  - - 22750
+                    - 24750
+                  - - 22750
+                    - 21900
+                  - - 27600
+                    - 21900
+                  - - 28850
+                    - 24300
+                  - - 28000
+                    - 25950
+                  - - 24150
+                    - 26100
+              - id: '19'
+                icon:
+                  name: mdi:broom
+                  x: 28600
+                  'y': 27525
+                label:
+                  text: Entrée
+                  x: 28600
+                  'y': 27725
+                  offset_y: 35
+                outline:
+                  - - 29450
+                    - 25300
+                  - - 28850
+                    - 24300
+                  - - 28000
+                    - 25950
+                  - - 28000
+                    - 28700
+                  - - 29450
+                    - 28700
+              - id: '20'
+                icon:
+                  name: mdi:broom
+                  x: 33200
+                  'y': 25525
+                label:
+                  text: SDB
+                  x: 33200
+                  'y': 25725
+                  offset_y: 35
+                outline:
+                  - - 34250
+                    - 23650
+                  - - 34250
+                    - 26050
+                  - - 32650
+                    - 27000
+                  - - 31150
+                    - 24450
+                  - - 32000
+                    - 23950
+                  - - 33550
+                    - 24100
+              - id: '21'
+                icon:
+                  name: mdi:broom
+                  x: 30700
+                  'y': 24125
+                outline:
+                  - - 29000
+                    - 24500
+                  - - 31800
+                    - 22700
+                  - - 32300
+                    - 23600
+                  - - 29450
+                    - 25250
+            variables: {}
+        icons:
+          - icon: mdi:play
+            conditions:
+              - entity: vacuum.aspi
+                value_not: cleaning
+              - entity: vacuum.aspi
+                value_not: error
+              - entity: vacuum.aspi
+                value_not: returning
+            tooltip: Start
+            tap_action:
+              action: call-service
+              service: vacuum.start
+              service_data:
+                entity_id: vacuum.aspi
+          - icon: mdi:pause
+            conditions:
+              - entity: vacuum.aspi
+                value_not: docked
+              - entity: vacuum.aspi
+                value_not: idle
+              - entity: vacuum.aspi
+                value_not: error
+              - entity: vacuum.aspi
+                value_not: paused
+            tooltip: Pause
+            tap_action:
+              action: call-service
+              service: vacuum.pause
+              service_data:
+                entity_id: vacuum.aspi
+          - icon: mdi:stop
+            conditions:
+              - entity: vacuum.aspi
+                value_not: docked
+              - entity: vacuum.aspi
+                value_not: idle
+              - entity: vacuum.aspi
+                value_not: error
+              - entity: vacuum.aspi
+                value_not: paused
+            tooltip: Stop
+            tap_action:
+              action: call-service
+              service: vacuum.stop
+              service_data:
+                entity_id: vacuum.aspi
+          - icon: mdi:home-map-marker
+            conditions:
+              - entity: vacuum.aspi
+                value_not: docked
+              - entity: vacuum.aspi
+                value_not: returning
+            tooltip: Return to base
+            tap_action:
+              action: call-service
+              service: vacuum.return_to_base
+              service_data:
+                entity_id: vacuum.aspi
+          - icon: mdi:target-variant
+            conditions:
+              - entity: vacuum.aspi
+                value_not: docked
+              - entity: vacuum.aspi
+                value_not: error
+              - entity: vacuum.aspi
+                value_not: cleaning
+              - entity: vacuum.aspi
+                value_not: returning
+            tooltip: Clean spot
+            tap_action:
+              action: call-service
+              service: vacuum.clean_spot
+              service_data:
+                entity_id: vacuum.aspi
+          - icon: mdi:map-marker
+            tooltip: Locate
+            tap_action:
+              action: call-service
+              service: vacuum.locate
+              service_data:
+                entity_id: vacuum.aspi
+          - menu_id: fan_speed
+            icon: mdi:fan-alert
+            label: 'off'
+            conditions:
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value: 'off'
+            tooltip: Change fan speed
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                entity_id: vacuum.aspi
+                fan_speed: 'off'
+          - menu_id: fan_speed
+            icon: mdi:fan-alert
+            label: quiet
+            conditions:
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value: quiet
+            tooltip: Change fan speed
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                entity_id: vacuum.aspi
+                fan_speed: quiet
+          - menu_id: fan_speed
+            icon: mdi:fan-alert
+            label: balanced
+            conditions:
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value: balanced
+            tooltip: Change fan speed
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                entity_id: vacuum.aspi
+                fan_speed: balanced
+          - menu_id: fan_speed
+            icon: mdi:fan-alert
+            label: Turbo
+            conditions:
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value: turbo
+            tooltip: Change fan speed
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                entity_id: vacuum.aspi
+                fan_speed: turbo
+          - menu_id: fan_speed
+            icon: mdi:fan-alert
+            label: max
+            conditions:
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value: max
+            tooltip: Change fan speed
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                entity_id: vacuum.aspi
+                fan_speed: max
+          - menu_id: fan_speed
+            icon: mdi:fan-alert
+            label: custom
+            conditions:
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value: custom
+            tooltip: Change fan speed
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                entity_id: vacuum.aspi
+                fan_speed: custom
+          - menu_id: fan_speed
+            icon: mdi:fan-alert
+            label: max_plus
+            conditions:
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value: max_plus
+            tooltip: Change fan speed
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                entity_id: vacuum.aspi
+                fan_speed: max_plus
+          - icon: mdi:fan-alert
+            conditions:
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value_not: 'off'
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value_not: quiet
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value_not: balanced
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value_not: turbo
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value_not: max
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value_not: custom
+              - entity: vacuum.aspi
+                attribute: fan_speed
+                value_not: max_plus
+            tooltip: Change fan speed
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                entity_id: vacuum.aspi
+                fan_speed: 'off'
+        tiles:
+          - tile_id: status
+            entity: vacuum.aspi
+            label: Status
+            attribute: status
+            icon: mdi:robot-vacuum
+            translations:
+              starting: Starting
+              charger disconnected: Charger disconnected
+              idle: Idle
+              remote control active: Remote control active
+              cleaning: Cleaning
+              returning home: Returning home
+              manual mode: Manual mode
+              charging: Charging
+              charging problem: Charging problem
+              paused: Paused
+              spot cleaning: Spot cleaning
+              error: Error
+              shutting down: Shutting down
+              updating: Updating
+              docking: Docking
+              going to target: Going to target
+              zoned cleaning: Zoned cleaning
+              segment cleaning: Segment cleaning
+              emptying the bin: Emptying the bin
+              charging complete: Charging complete
+              device offline: Device offline
+          - tile_id: battery_level
+            entity: vacuum.aspi
+            label: Battery
+            attribute: battery_level
+            icon_source: vacuum.aspi.attributes.battery_icon
+            unit: '%'
+          - tile_id: fan_speed
+            entity: vacuum.aspi
+            label: Fan speed
+            attribute: fan_speed
+            icon: mdi:fan
+            translations:
+              silent: Silent
+              standard: Standard
+              medium: Medium
+              turbo: Turbo
+              auto: Auto
+              gentle: Gentle
+          - tile_id: sensor_dirty_left
+            label: Sensors left
+            unit: h
+            multiplier: 0.0002777777777777778
+            hold_action:
+              action: call-service
+              service: vacuum.send_command
+              confirmation: {}
+              service_data:
+                command: reset_consumable
+                params: sensor_dirty_time
+                entity_id: vacuum.aspi
+            entity: sensor.aspi_capteurs
+            icon: mdi:eye-outline
+            precision: 0
+            translations: {}
+          - tile_id: filter_left
+            label: Filter left
+            unit: h
+            multiplier: 0.0002777777777777778
+            hold_action:
+              action: call-service
+              service: vacuum.send_command
+              confirmation: {}
+              service_data:
+                command: reset_consumable
+                params: filter_work_time
+                entity_id: vacuum.aspi
+            entity: sensor.aspi_filtre
+            icon: mdi:air-filter
+            precision: 0
+            translations: {}
+          - tile_id: main_brush_left
+            label: Main brush left
+            unit: h
+            multiplier: 0.0002777777777777778
+            hold_action:
+              action: call-service
+              service: vacuum.send_command
+              confirmation: {}
+              service_data:
+                command: reset_consumable
+                params: main_brush_work_time
+                entity_id: vacuum.aspi
+            entity: sensor.aspi_brosse_principale
+            icon: mdi:brush
+            precision: 0
+            translations: {}
+          - tile_id: side_brush_left
+            label: Side brush left
+            unit: h
+            multiplier: 0.0002777777777777778
+            hold_action:
+              action: call-service
+              service: vacuum.send_command
+              confirmation: {}
+              service_data:
+                command: reset_consumable
+                params: side_brush_work_time
+                entity_id: vacuum.aspi
+            entity: sensor.aspi_brosse_laterale
+            icon: mdi:brush
+            precision: 0
+            translations: {}
+          - tile_id: cleaning_count
+            label: Cleaning count
+            entity: sensor.aspi_nombre_total_de_nettoyage
+            icon: mdi:counter
+            precision: 0
+            translations: {}
+        additional_presets: []
+  - type: sections
+    max_columns: 4
+    title: Températures
+    path: temperatures
+    icon: mdi:thermometer
+    sections:
+      - type: grid
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: custom:mushroom-title-card
+              - type: custom:text-divider-row
+                text: Salon
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temperature_salon_temperature
+                    primary_info: state
+                    secondary_info: none
+                    icon_color: pink
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temperature_salon_humidity
+                    primary_info: state
+                    secondary_info: none
+              - type: custom:mushroom-title-card
+              - type: custom:text-divider-row
+                text: Cour Entrée
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temp_cour_temperature
+                    primary_info: state
+                    secondary_info: none
+                    icon_color: pink
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temp_cour_humidity
+                    primary_info: state
+                    secondary_info: none
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temp_cour_pressure
+                    primary_info: state
+                    secondary_info: none
+                    icon_color: amber
+              - type: custom:mushroom-title-card
+              - type: custom:text-divider-row
+                text: Buanderie
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temperature_buanderie_temperature
+                    primary_info: state
+                    secondary_info: none
+                    icon_color: pink
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temperature_buanderie_humidity
+                    primary_info: state
+                    secondary_info: none
+              - type: custom:mushroom-title-card
+              - type: custom:text-divider-row
+                text: Cabanon
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temperature_cabanon_temperature
+                    primary_info: state
+                    secondary_info: none
+                    icon_color: pink
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.capteur_temperature_cabanon_humidity
+                    primary_info: state
+                    secondary_info: none
+    subview: true
+    cards: []
+  - title: Caméras
+    path: cameras
+    icon: mdi:video-outline
+    subview: true
+    cards: []
+    type: sections
+    sections:
+      - type: grid
+        cards:
+          - type: custom:advanced-camera-card
+            cameras:
+              - camera_entity: camera.camera_salon
+                live_provider: go2rtc
+            live:
+              preload: true
+              auto_pause: []
+              auto_play:
+                - visible
+                - selected
+            media_gallery:
+              controls:
+                thumbnails:
+                  show_details: false
+            view:
+              default: live
+          - type: custom:advanced-camera-card
+            cameras:
+              - camera_entity: camera.camera_salle_a_manger
+                live_provider: go2rtc
+          - type: custom:advanced-camera-card
+            cameras:
+              - camera_entity: camera.camera_bureau_charlotte
+                live_provider: go2rtc
+            visibility:
+              - condition: state
+                entity: switch.prise_camera_bureau_charlotte
+                state: 'on'
+      - type: grid
+        cards:
+          - type: custom:advanced-camera-card
+            cameras:
+              - camera_entity: camera.camera_cour
+                live_provider: go2rtc
+          - type: custom:advanced-camera-card
+            cameras:
+              - camera_entity: camera.camera_ouest
+                live_provider: go2rtc
+          - type: custom:advanced-camera-card
+            cameras:
+              - camera_entity: camera.camera_terrasse
+                live_provider: go2rtc
+    max_columns: 4
+  - title: Solaire
+    path: solaire
+    icon: mdi:solar-panel
+    type: sections
+    max_columns: 1
+    subview: true
+    sections:
+      - type: grid
+        cards:
+          - type: custom:apexcharts-card
+            apex_config:
+              chart:
+                height: 500px
+            cache: true
+            graph_span: 1d
+            span:
+              start: day
+            header:
+              show: false
+              show_states: false
+              colorize_states: true
+            series:
+              - entity: sensor.production_solaire_instantanee
+                name: Production Totale
+                curve: smooth
+                type: line
+                stroke_width: 2
+                extend_to: now
+                group_by:
+                  duration: 15min
+                  func: avg
+              - entity: sensor.apsystems_panneaux_est_total_power
+                name: Production Est
+                curve: smooth
+                type: line
+                stroke_width: 2
+                extend_to: now
+                group_by:
+                  duration: 15min
+                  func: avg
+              - entity: sensor.apsystems_panneaux_ouest_total_power
+                name: Production Ouest
+                curve: smooth
+                type: line
+                stroke_width: 2
+                extend_to: now
+                group_by:
+                  duration: 60min
+                  func: avg
+          - type: custom:hatc-gauge-card
+            entity: sensor.production_solaire_instantanee
+            title: false
+            card:
+              height: 150px
+            gauge:
+              icon-color: severity
+              max_value: 1600
+              text-color: severity
+              severity:
+                - color: rgb(0,151,243)
+                - color: green
+                  from: 1000
+                  to: 1600
+                - color: yellow
+                  from: 500
+                  to: 999
+                - color: orange
+                  from: 499
+                  to: 100
+                - color: red
+                  from: 99
+                  to: 0
+    cards: []
+  - type: sections
+    max_columns: 4
+    title: Baie Serveurs
+    path: baie-serveurs
+    subview: true
+    icon: mdi:server
+    sections:
+      - type: grid
+        cards:
+          - type: entities
+            title: Eaton
+            show_header_toggle: false
+            entities:
+              - type: custom:hui-vertical-stack-card
+                cards:
+                  - type: horizontal-stack
+                    cards:
+                      - type: picture
+                        style: |
+                          ha-card {
+                              width: 70%;
+                              background: none;
+                              box-shadow: none;
+                          }
+                        image: /local/images/materiel/Ellipse_Pro_650.png
+                      - type: vertical-stack
+                        cards:
+                          - type: custom:bar-card
+                            title_position: inside
+                            name: Utilisation
+                            show_icon: true
+                            align: split
+                            columns: 1
+                            max: 100
+                            unit_of_measurement: '%'
+                            severity:
+                              - color: Green
+                                from: 0
+                                to: 25
+                              - color: Blue
+                                from: 26
+                                to: 50
+                              - color: Orange
+                                from: 51
+                                to: 80
+                              - color: Red
+                                from: 81
+                                to: 100
+                            style: |
+                              ha-card {
+                                  background: none;
+                                  box-shadow: none;
+                              }
+                            entity: sensor.eaton_ellipse_pro_650_etat
+                          - type: custom:bar-card
+                            title_position: inside
+                            icon: mdi:battery
+                            name: Charge
+                            show_icon: true
+                            align: split
+                            columns: 1
+                            max: 100
+                            unit_of_measurement: '%'
+                            severity:
+                              - color: Red
+                                from: 0
+                                to: 25
+                              - color: Orange
+                                from: 26
+                                to: 50
+                              - color: Green
+                                from: 51
+                                to: 100
+                            style: |
+                              ha-card {
+                                  background: none;
+                                  box-shadow: none;
+                              }
+                            entity: sensor.eaton_ellipse_pro_650_charge_de_la_batterie
+                  - entities:
+                      - entity: sensor.eaton_ellipse_pro_650_etat
+                        name: Etat
+                      - entity: sensor.eaton_ellipse_pro_650_tension_de_sortie
+                        name: Tension de sortie
+                    type: glance
+                    style: |
+                      ha-card {
+                          background: none;
+                      }
+            state_color: true
+        column_span: 1
+      - type: grid
+        cards:
+          - type: entities
+            title: Eaton
+            show_header_toggle: false
+            entities:
+              - type: custom:hui-vertical-stack-card
+                cards:
+                  - type: horizontal-stack
+                    cards:
+                      - type: picture
+                        style: |
+                          ha-card {
+                              width: 70%;
+                              background: none;
+                              box-shadow: none;
+                          }
+                        image: /local/images/materiel/Ellipse_Pro_650.png
+                      - type: vertical-stack
+                        cards:
+                          - type: custom:bar-card
+                            title_position: inside
+                            name: Utilisation
+                            show_icon: true
+                            align: split
+                            columns: 1
+                            max: 100
+                            unit_of_measurement: '%'
+                            severity:
+                              - color: Green
+                                from: 0
+                                to: 25
+                              - color: Blue
+                                from: 26
+                                to: 50
+                              - color: Orange
+                                from: 51
+                                to: 80
+                              - color: Red
+                                from: 81
+                                to: 100
+                            style: |
+                              ha-card {
+                                  background: none;
+                                  box-shadow: none;
+                              }
+                            entity: sensor.eaton_ellipse_pro_650_etat
+                          - type: custom:bar-card
+                            title_position: inside
+                            icon: mdi:battery
+                            name: Charge
+                            show_icon: true
+                            align: split
+                            columns: 1
+                            max: 100
+                            unit_of_measurement: '%'
+                            severity:
+                              - color: Red
+                                from: 0
+                                to: 25
+                              - color: Orange
+                                from: 26
+                                to: 50
+                              - color: Green
+                                from: 51
+                                to: 100
+                            style: |
+                              ha-card {
+                                  background: none;
+                                  box-shadow: none;
+                              }
+                            entity: sensor.eaton_ellipse_pro_650_charge_de_la_batterie
+                  - entities:
+                      - entity: sensor.eaton_ellipse_pro_650_etat
+                        name: Etat
+                      - entity: sensor.eaton_ellipse_pro_650_tension_de_sortie
+                        name: Tension de sortie
+                    type: glance
+                    style: |
+                      ha-card {
+                          background: none;
+                      }
+            state_color: true
+    cards: []
+  - type: sections
+    max_columns: 1
+    title: Garage
+    path: garage
+    icon: mdi:garage-variant
+    sections:
+      - type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.bambulab_p1s
+            card_layout: large
+            icon: mdi:fan
+            styles: |
+              * { font-size: 20px !important;} .bubble-icon {
+                animation: ${hass.states['switch.bambulab_p1s'].state === 'on' ? 'slow-rotate 2s linear infinite' : ''};
+              } @keyframes slow-rotate {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+              }
+            show_state: false
+            show_last_changed: false
+            show_attribute: false
+            force_icon: false
+            show_icon: true
+            scrolling_effect: true
+            sub_button:
+              - entity: sensor.pompe_piscine_power
+                show_state: true
+                show_name: false
+                show_icon: false
+                state_background: true
+                show_background: false
+                tap_action:
+                  action: none
+                double_tap_action:
+                  action: none
+            rows: 1
+    subview: true
+    cards: []
+  - type: sections
+    max_columns: 4
+    title: Tondeuse
+    path: tondeuse
+    icon: mdi:robot-mower
+    sections:
+      - type: grid
+        cards:
+          - type: custom:lawn-mower-card
+            styles:
+              card:
+                - show_border: false
+              grid:
+                - position: relative
+            entity: lawn_mower.coupe_coupe
+            image: /local/images/materiel/YUKA_mini.png
+            battery: sensor.coupe_coupe_batterie
+            show_toolbar: true
+            show_shortcuts: true
+            actions:
+              start:
+                service: script.tondre_toutes_les_zones
+              return_to_base:
+                service: script.tondeuse_retourner_a_la_base
+              pause:
+                service: script.tondeuse_pause
+              locate:
+                service: script.tondeuse_retourner_a_la_base
+              stop:
+                service: script.tondeuse_stop
+            stats:
+              default:
+                - entity_id: sensor.coupe_coupe_connexion
+                  subtitle: Connexion
+                - entity_id: sensor.coupe_coupe_satellites_robot
+                  subtitle: Satellites
+                - entity_id: sensor.coupe_coupe_signal_wi_fi
+                  subtitle: Wifi
+                  unit: dbm
+                - entity_id: sensor.prise_robot_tondeuse_power
+                  subtitle: Conso
+                  unit: W
+              mowing:
+                - entity_id: sensor.coupe_coupe_vitesse_de_tonte
+                  subtitle: Vitesse de tonte
+                  unit: m/s
+                - entity_id: sensor.coupe_coupe_temps_ecoule
+                  subtitle: Temps écoulé
+                  unit: min
+                - entity_id: sensor.coupe_coupe_temps_restant
+                  subtitle: Temps restant
+                  unit: min
+                - entity_id: sensor.coupe_coupe_progression
+                  subtitle: Progression
+                  unit: '%'
+            shortcuts:
+              - name: Forsythia
+                service: script.tondre_zone_forsythia
+                icon: mdi:tree-outline
+              - name: Fontaine
+                service: script.tondre_zone_fontaine
+                icon: mdi:fountain
+              - name: Piscine
+                action: mammotion.start_mow
+                service: script.tondre_zone_piscine
+                icon: mdi:pool
+              - name: Romarin
+                action: mammotion.start_mow
+                service: script.tondre_zone_romarin
+                icon: mdi:grass
+              - name: Lilas
+                service: script.tondre_zone_lilas
+                icon: mdi:forest-outline
+            card_mod:
+              style: |
+                ha-card {
+                  background: transparent; 
+                  border-style: none;
+                  font-size: 20px;
+                  font-family: Arial, sans-serif;
+                  font-weight: bold
+                   }
+    subview: true
+    cards: []
+  - title: Temperatures1
+    path: temperatures-1
+    cards: []
+    icon: mdi:thermometer
+    subview: true
+    type: sections
+    sections:
+      - type: grid
+        cards:
+          - type: grid
+            columns: 2
+            title: Salon
+            cards:
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temperature_salon_temperature
+                card: null
+                height: 150 px
+                title: Température
+                gauge:
+                  digits: 1
+                  max_value: 50
+                  text-color: severity
+                  severity:
+                    - color: rgb(0,151,243)
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temperature_salon_humidity
+                card: null
+                height: 150px
+                title: Humidité
+                gauge:
+                  max_value: 100
+                  text-color: severity
+                  severity:
+                    - color: rgb(0,151,243)
+          - type: custom:apexcharts-card
+            apex_config:
+              chart:
+                height: 250px
+            graph_span: 24h
+            header:
+              show: false
+              show_states: false
+              colorize_states: true
+            series:
+              - entity: sensor.capteur_temperature_salon_temperature
+                curve: smooth
+                type: line
+                group_by:
+                  duration: 60min
+                  func: avg
+      - type: grid
+        cards:
+          - type: horizontal-stack
+            title: Cour Entrée
+            cards:
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temp_cour_temperature
+                card: null
+                height: 150px
+                title: Température
+                gauge:
+                  digits: 1
+                  max_value: 50
+                  text-color: severity
+                  severity:
+                    - color: rgb(0,151,243)
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temp_cour_humidity
+                card: null
+                height: 150px
+                title: Humidité
+                gauge:
+                  max_value: 100
+                  text-color: severity
+                  severity:
+                    - color: rgb(0,151,243)
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temp_cour_pressure
+                card: null
+                height: 150px
+                title: Pression aire
+                gauge:
+                  max_value: 1100
+                  min_value: 950
+                  severity:
+                    - color: rgb(0,151,243)
+          - type: horizontal-stack
+            title: Buanderie
+            cards:
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temperature_buanderie_temperature
+                card: null
+                height: 150px
+                title: Température
+                gauge:
+                  digits: 1
+                  max_value: 50
+                  text-color: severity
+                  severity:
+                    - color: rgb(0,151,243)
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temperature_buanderie_humidity
+                card: null
+                height: 150px
+                title: Humidité
+                gauge:
+                  max_value: 100
+                  text-color: severity
+                  severity:
+                    - color: rgb(0,151,243)
+          - type: horizontal-stack
+            title: Cabanon
+            cards:
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temperature_cabanon_temperature
+                card: null
+                height: 150px
+                title: Température
+                gauge:
+                  digits: 1
+                  max_value: 50
+                  text-color: severity
+                  severity:
+                    - color: rgb(0,151,243)
+              - type: custom:hatc-gauge-card
+                entity: sensor.capteur_temperature_cabanon_humidity
+                card: null
+                height: 150px
+                title: Humidité
+                gauge:
+                  max_value: 100
+                  text-color: severity
+                  severity:
+                    - color: rgb(0,151,243)
+    max_columns: 2
+title: Maison
