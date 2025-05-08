@@ -1,0 +1,75 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+#template: !include template.yaml
+
+homeassistant:
+  external_url: "https://homeassistant.emmanuelli-billard.fr" # ne pas indiquer le port
+  internal_url: "http://192.168.2.30:8123" # adresse locale de HA avec le port
+  packages: !include_dir_named packages
+  
+http:
+  use_x_forwarded_for: true
+  trusted_proxies: # adresse(s) IP locale(s) du NAS Synology
+    - 192.168.2.2
+  ip_ban_enabled: false
+
+group:
+  Nous:
+    name: Nous
+    entities:
+      - person.damien
+      - person.charlotte2
+
+mistral_ai_api:
+  name: "Mistral AI API"
+  api_key: qIBkIoLbsgcdWjz4xcgAMTJnUtFUijU6
+
+zone:
+  - name: Home
+    latitude: 45.53054
+    longitude: 5.51527
+    radius: 40
+  - name: Quartier
+    latitude: 45.530542
+    longitude: 5.515427
+    radius: 55
+  - name: Le_Passage
+    latitude: 45.53264
+    longitude: 5.51200
+    radius: 2000
+  - name: Garderie
+    latitude: 45.532496
+    longitude: 5.502902
+    radius: 200
+  - name: Intermarche
+    latitude: 45.56644
+    longitude: 5.42925
+    radius: 75
+recorder:
+  commit_interval: 30
+  purge_keep_days: 7
+  #exclude:
+    #domains:
+      #- update
+      #- camera
+    #entity_globs:
+      #- sensor.sun*
+      #- weather.*
+      #- sensor.le_passage
+      #- sensor.aspi
+    #entities:
+      #- sensor.date
+      #- sensor.last_boot # Comes from 'systemmonitor' sensor platform
+      #- sun.sun # Don't record sun data
