@@ -1,0 +1,63 @@
+type: vertical-stack
+cards:
+  - type: custom:mushroom-title-card
+  - type: custom:text-divider-row
+    text: Salon
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temperature_salon_temperature
+        primary_info: state
+        secondary_info: none
+        icon_color: pink
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temperature_salon_humidity
+        primary_info: state
+        secondary_info: none
+  - type: custom:mushroom-title-card
+  - type: custom:text-divider-row
+    text: Cour Entrée
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temp_cour_temperature
+        primary_info: state
+        secondary_info: none
+        icon_color: pink
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temp_cour_humidity
+        primary_info: state
+        secondary_info: none
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temp_cour_pressure
+        primary_info: state
+        secondary_info: none
+        icon_color: amber
+  - type: custom:mushroom-title-card
+  - type: custom:text-divider-row
+    text: Buanderie
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temperature_buanderie_temperature
+        primary_info: state
+        secondary_info: none
+        icon_color: pink
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temperature_buanderie_humidity
+        primary_info: state
+        secondary_info: none
+  - type: custom:mushroom-title-card
+  - type: custom:text-divider-row
+    text: Cabanon
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temperature_cabanon_temperature
+        primary_info: state
+        secondary_info: none
+        icon_color: pink
+      - type: custom:mushroom-entity-card
+        entity: sensor.capteur_temperature_cabanon_humidity
+        primary_info: state
+        secondary_info: none
